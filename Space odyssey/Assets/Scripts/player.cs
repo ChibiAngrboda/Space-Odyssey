@@ -30,25 +30,19 @@ public class player : MonoBehaviour
         //controles : 
         if (Input.GetMouseButton(0))
         {
-            //print("rien que pour toi bébou léandre");
 
-            m_rigidbody.AddForce(transform.up, (ForceMode2D)thrust);
+           m_rigidbody.AddForce(transform.up, (ForceMode2D)(thrust * Time.fixedDeltaTime));
+
+            // limiter la poussée
+            m_rigidbody.velocity = Vector3.ClampMagnitude(m_rigidbody.velocity, 10f);
         }
+        // couper l'inertie du addforce
         if (Input.GetMouseButtonUp(0))
         {
-            m_rigidbody.velocity = Vector3.up * -stopThrust;
+            m_rigidbody.velocity = Vector3.up * -stopThrust * Time.deltaTime;
         }
 
-        else
-        {
-            //m_rigidbody.velocity = Vector3.zero;
-            
-        }
+     
 
-
-        /*if (Input.GetMouseButton(1))
-        {
-            print("yeahhhh");
-        }*/
     }
 }
