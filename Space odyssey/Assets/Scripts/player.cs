@@ -39,7 +39,7 @@ public class player : MonoBehaviour
         // couper l'inertie du addforce
         if (Input.GetMouseButtonUp(0))
         {
-            m_rigidbody.velocity = Vector3.up * -stopThrust * Time.deltaTime;
+            m_rigidbody.velocity = Vector3.up * -stopThrust;
         }
 
      
