@@ -386,7 +386,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
-  "Pous\xE9e": 10
+  thrust: 28
+  stopThrust: 1
 --- !u!1 &1484904565
 GameObject:
   m_ObjectHideFlags: 0

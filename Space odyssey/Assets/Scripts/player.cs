@@ -7,7 +7,8 @@ public class player : MonoBehaviour
     
     public GameObject cam;
     Rigidbody2D m_rigidbody;
-    public float Pousée = 28f;
+    public float thrust = 10f;
+    public float stopThrust;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,9 +30,19 @@ public class player : MonoBehaviour
         //controles : 
         if (Input.GetMouseButton(0))
         {
-            print("rien que pour toi bébou léandre");
+            //print("rien que pour toi bébou léandre");
 
-            m_rigidbody.AddForce(transform.up, (ForceMode2D)Pousée);
+            m_rigidbody.AddForce(transform.up, (ForceMode2D)thrust);
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            m_rigidbody.velocity = Vector3.up * -stopThrust;
+        }
+
+        else
+        {
+            //m_rigidbody.velocity = Vector3.zero;
+            
         }
 
 
