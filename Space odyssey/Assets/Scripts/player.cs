@@ -57,7 +57,12 @@ public class player : MonoBehaviour
 
         m_rigidbody.AddForce(transform.right, (ForceMode2D)(speed * Time.fixedDeltaTime));
        
+        // tue le joueur si il tombe 
 
+        if (gameObject.transform.position.y <= -5 )
+        {
+            Destroy(gameObject);
+        }
 
 
 
