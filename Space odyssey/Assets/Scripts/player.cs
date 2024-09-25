@@ -83,6 +83,12 @@ public class player : MonoBehaviour
             fioleNB += 1;
 
         }
+        if (collision.gameObject.tag == "Alien")
+        {
+            Destroy(gameObject);
+            
+
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
