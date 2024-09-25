@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Fiole
   - Obstacle
+  - Ground
   layers:
   - Default
   - TransparentFX

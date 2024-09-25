@@ -5,13 +5,30 @@ using UnityEngine;
 public class Rock : MonoBehaviour
 {
     public Rigidbody2D rb;
-    // Start is called before the first frame update
+    
+   
     void Start()
     {
+        
         rb = GetComponent<Rigidbody2D>();
-        //rb.AddForce(new Vector3(Random.Range(-5,5),Random.Range(2,5),0));
-        rb.AddForce(transform.up * 5);
+
+        if (rb != null)
+        {
+            // force aléatoire 
+            Vector2 force = new Vector2(Random.Range(-7f, 7f), Random.Range(8f, 14f));
+            rb.AddForce(force, ForceMode2D.Impulse);
+            
+        }
+        
+
     }
 
-    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Obstacle")
+        {
+            Destroy(gameObject);
+        }
+    }
+
 }
