@@ -19,7 +19,7 @@ public class Volcano : MonoBehaviour
         cooldown -= 1;
         if (cooldown <= 0)
         {
-            Instantiate(rock,new Vector3(gameObject.transform.position.x,gameObject.transform.position.y + 5, 0), new Quaternion(0,0,0,0));
+            Instantiate(rock,new Vector3(gameObject.transform.position.x,gameObject.transform.position.y + 2.5f, 0), new Quaternion(0,0,0,0));
             cooldown += baseCD;
         }
     }
