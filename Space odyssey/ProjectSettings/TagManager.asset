@@ -7,6 +7,7 @@ TagManager:
   - Fiole
   - Obstacle
   - Ground
+  - Segment
   layers:
   - Default
   - TransparentFX

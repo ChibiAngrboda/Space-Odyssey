@@ -19,9 +19,19 @@ public class Asteroid : MonoBehaviour
     void Update()
     {
         // Déplacer l'astéroïde
-        transform.Translate(movementDirection * speed * Time.deltaTime);
+        transform.position += (Vector3)(movementDirection * speed * Time.deltaTime);
 
         // Faire tourner l'astéroïde
         transform.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime);
     }
-}
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            // Inverser la direction
+            movementDirection = -movementDirection.normalized;
+        }
+    }
+    }

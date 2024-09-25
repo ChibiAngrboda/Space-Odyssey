@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6582468946042127725}
   - component: {fileID: 6582468946042127726}
   - component: {fileID: 3061598400346949702}
+  - component: {fileID: 519705777211575350}
   m_Layer: 0
   m_Name: asteroid
   m_TagString: Obstacle
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6582468946042127727}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.259958, y: -5.7444706, z: 1.9759157}
+  m_LocalPosition: {x: -11.259958, y: -5.7444706, z: 0}
   m_LocalScale: {x: 2, y: 3, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -130,3 +131,17 @@ PolygonCollider2D:
       - {x: 0.40234375, y: 0.29296875}
       - {x: 0.29296875, y: 0.40234375}
       - {x: 0.15234375, y: 0.47265625}
+--- !u!114 &519705777211575350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6582468946042127727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e16532ac7afde248aba896e9a2808c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  rotationSpeed: 20
