@@ -27,7 +27,7 @@ public class player : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         // caméra qui suit sur x 
         cam.transform.position = new Vector3(gameObject.transform.position.x + camShift, cam.transform.position.y, cam.transform.position.z);
@@ -42,7 +42,7 @@ public class player : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
 
-           m_rigidbody.AddForce(transform.up, (ForceMode2D)(thrust * Time.fixedDeltaTime));
+           m_rigidbody.AddForce(transform.up, (ForceMode2D)(thrust));
 
             // limiter la poussée
             m_rigidbody.velocity = Vector3.ClampMagnitude(m_rigidbody.velocity, 10f);
@@ -53,9 +53,6 @@ public class player : MonoBehaviour
             m_rigidbody.velocity = Vector3.up * -stopThrust;
         }
 
-        // avancée du joueur
-
-        m_rigidbody.AddForce(transform.right, (ForceMode2D)(speed * Time.fixedDeltaTime));
        
         // tue le joueur si il tombe 
 
@@ -65,15 +62,16 @@ public class player : MonoBehaviour
         }
 
 
-
+        gameObject.transform.position += new Vector3(speed, 0, 0);
+        speed += acceleration;
     }
 
-    private void FixedUpdate()
+    /*private void FixedUpdate()
     {
         
         gameObject.transform.position += new Vector3(speed, 0, 0);
         speed += acceleration;
-    }
+    }*/
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
