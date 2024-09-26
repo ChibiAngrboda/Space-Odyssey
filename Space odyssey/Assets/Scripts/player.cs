@@ -22,6 +22,8 @@ public class player : MonoBehaviour
     public int fioleNB;
     public int bonusCD;
     public GameObject powerUP;
+    private Transform Shield;
+    public bool IsShieldActive = false;
     [Space(5)]
     [Header("UI")]
     public TMP_Text ScoreText;
@@ -33,7 +35,7 @@ public class player : MonoBehaviour
     void Start()
     {
         cam = GameObject.Find("Main Camera");
-
+        Shield = transform.Find("Shield");
         m_rigidbody = GetComponent <Rigidbody2D>();
         Alien = GameObject.Find("Alien");
         //Indicateur = GameObject.Find("Indicateur");
@@ -124,19 +126,38 @@ public class player : MonoBehaviour
         }
         if (collision.gameObject.tag == "PowerUP")
         {
-            print("tamér");
+            
             Destroy(collision.gameObject);
-
+            if (IsShieldActive == false)
+            {
+                Shield.gameObject.SetActive(true);
+                IsShieldActive = true;
+            }
+            
 
         }
     }
+
+    
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         
         if (collision.gameObject.tag == "Obstacle")
         {
             Destroy(collision.gameObject);
-            speed = speed * slow;
+
+            if (IsShieldActive == false)
+            {
+                speed = speed * slow;
+            }
+            else if (IsShieldActive == true)
+            {
+                Shield.gameObject.SetActive (false);
+                IsShieldActive = false;
+             
+            }
+            
         }
 
     }
