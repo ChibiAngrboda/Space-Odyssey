@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using JetBrains.Annotations;
 
 public class player : MonoBehaviour
 {
@@ -18,12 +20,21 @@ public class player : MonoBehaviour
     [Space(5)]
     [Header("Collectables")]
     public int fioleNB;
+    [Space(5)]
+    [Header("UI")]
+    public TMP_Text ScoreText;
+    public GameObject Alien;
+    public TMP_Text DistanceText;
+    public float distance;
+    public RectTransform Indicateur;
     // Start is called before the first frame update
     void Start()
     {
         cam = GameObject.Find("Main Camera");
 
         m_rigidbody = GetComponent <Rigidbody2D>();
+        Alien = GameObject.Find("Alien");
+        //Indicateur = GameObject.Find("Indicateur");
     }
 
     // Update is called once per frame
@@ -64,14 +75,25 @@ public class player : MonoBehaviour
 
         gameObject.transform.position += new Vector3(speed, 0, 0);
         speed += acceleration;
+
+        // score
+
+        ScoreText.text = "Samples collected = " + fioleNB.ToString();
+
+        // affiche distance alien
+        distance = gameObject.transform.position.x - Alien.transform.position.x;
+        int roundedDistance  = Mathf.RoundToInt(distance);
+        DistanceText.text = roundedDistance.ToString();
+
+        Transform playerPos = gameObject.transform;
+        Camera camera = Camera.main;
+        Vector3 playerScreenPos = camera.WorldToScreenPoint(playerPos.position);
+        Indicateur.position = new Vector3(Indicateur.position.x, playerScreenPos.y, Indicateur.position.z);
+        Debug.Log("Player Position: " + playerPos.position + " Indicator Position: " + Indicateur.position);
+
     }
 
-    /*private void FixedUpdate()
-    {
-        
-        gameObject.transform.position += new Vector3(speed, 0, 0);
-        speed += acceleration;
-    }*/
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
