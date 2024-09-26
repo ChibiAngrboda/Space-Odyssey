@@ -20,6 +20,8 @@ public class player : MonoBehaviour
     [Space(5)]
     [Header("Collectables")]
     public int fioleNB;
+    public int bonusCD;
+    public GameObject powerUP;
     [Space(5)]
     [Header("UI")]
     public TMP_Text ScoreText;
@@ -47,13 +49,13 @@ public class player : MonoBehaviour
         {
             cam.transform.position = new Vector3(cam.transform.position.x, gameObject.transform.position.y, cam.transform.position.z);
         }
-        
+
 
         //controles : 
         if (Input.GetMouseButton(0))
         {
 
-           m_rigidbody.AddForce(transform.up, (ForceMode2D)(thrust));
+            m_rigidbody.AddForce(transform.up, (ForceMode2D)(thrust));
 
             // limiter la poussée
             m_rigidbody.velocity = Vector3.ClampMagnitude(m_rigidbody.velocity, 10f);
@@ -64,10 +66,10 @@ public class player : MonoBehaviour
             m_rigidbody.velocity = Vector3.up * -stopThrust;
         }
 
-       
+
         // tue le joueur si il tombe 
 
-        if (gameObject.transform.position.y <= -5 )
+        if (gameObject.transform.position.y <= -5)
         {
             Destroy(gameObject);
         }
@@ -82,8 +84,10 @@ public class player : MonoBehaviour
 
         // affiche distance alien
         distance = gameObject.transform.position.x - Alien.transform.position.x;
-        int roundedDistance  = Mathf.RoundToInt(distance);
+        int roundedDistance = Mathf.RoundToInt(distance);
         DistanceText.text = roundedDistance.ToString() + " m";
+
+
         /*
         Transform playerPos = gameObject.transform;
         Camera camera = Camera.main;
@@ -91,8 +95,16 @@ public class player : MonoBehaviour
         Indicateur.position = new Vector3(Indicateur.position.x, playerScreenPos.y, Indicateur.position.z);
         Debug.Log("Player Position: " + playerPos.position + " Indicator Position: " + Indicateur.position);
         */
-    }
 
+
+        if (bonusCD >= 25)
+        {
+            //int randomNB = Random.Range(0, 11);
+            Instantiate(powerUP, new Vector3(gameObject.transform.position.x + 20, gameObject.transform.position.y, powerUP.transform.position.z), new Quaternion(0,0,0,0));
+            bonusCD = 0;
+        }
+
+    }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -101,12 +113,20 @@ public class player : MonoBehaviour
         {
             Destroy(collision.gameObject);
             fioleNB += 1;
-
+            bonusCD += 1;
+            speed += 0.01f;
         }
         if (collision.gameObject.tag == "Alien")
         {
             Destroy(gameObject);
             
+
+        }
+        if (collision.gameObject.tag == "PowerUP")
+        {
+            print("tamér");
+            Destroy(collision.gameObject);
+
 
         }
     }

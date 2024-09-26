@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - Segment
   - Alien
+  - PowerUP
   layers:
   - Default
   - TransparentFX
