@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using JetBrains.Annotations;
+using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour
 {
@@ -83,6 +84,7 @@ public class player : MonoBehaviour
         if (gameObject.transform.position.y <= -5)
         {
             Destroy(gameObject);
+            SceneManager.LoadScene("MainScène");
         }
 
 
@@ -135,7 +137,7 @@ public class player : MonoBehaviour
         if (collision.gameObject.tag == "Alien")
         {
             Destroy(gameObject);
-            
+            SceneManager.LoadScene("MainScène");
 
         }
         if (collision.gameObject.tag == "PowerUP")
