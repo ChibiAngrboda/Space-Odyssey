@@ -977,10 +977,10 @@ MonoBehaviour:
   cam: {fileID: 0}
   camShift: 6
   thrust: 300
-  stopThrust: 1
+  stopThrust: 0
   speed: 0.1
-  slow: 0.4
-  acceleration: 0.0001
+  slow: 0.8
+  acceleration: 0.00015
   fioleNB: 0
   ScoreText: {fileID: 825120521}
   Alien: {fileID: 1996910409}
@@ -1217,7 +1217,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1996910409}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -80.9, y: -2.72, z: 0}
+  m_LocalPosition: {x: -172.2, y: -2.72, z: 0}
   m_LocalScale: {x: 3.5341, y: 1.5557, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

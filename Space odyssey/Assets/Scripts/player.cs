@@ -83,14 +83,14 @@ public class player : MonoBehaviour
         // affiche distance alien
         distance = gameObject.transform.position.x - Alien.transform.position.x;
         int roundedDistance  = Mathf.RoundToInt(distance);
-        DistanceText.text = roundedDistance.ToString();
-
+        DistanceText.text = roundedDistance.ToString() + " m";
+        /*
         Transform playerPos = gameObject.transform;
         Camera camera = Camera.main;
         Vector3 playerScreenPos = camera.WorldToScreenPoint(playerPos.position);
         Indicateur.position = new Vector3(Indicateur.position.x, playerScreenPos.y, Indicateur.position.z);
         Debug.Log("Player Position: " + playerPos.position + " Indicator Position: " + Indicateur.position);
-
+        */
     }
 
 

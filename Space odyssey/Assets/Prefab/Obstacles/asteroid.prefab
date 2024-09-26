@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6582468946042127725}
   - component: {fileID: 6582468946042127726}
-  - component: {fileID: 3061598400346949702}
   - component: {fileID: 519705777211575350}
+  - component: {fileID: 3441241554029589280}
   m_Layer: 0
   m_Name: asteroid
   m_TagString: Obstacle
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 6582468946042127727}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -11.259958, y: -5.7444706, z: 0}
-  m_LocalScale: {x: 2, y: 3, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.94416547, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 7b216207669225441b48986fd1fafd41, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -86,7 +86,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &3061598400346949702
+--- !u!114 &519705777211575350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6582468946042127727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e16532ac7afde248aba896e9a2808c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  rotationSpeed: 20
+--- !u!60 &3441241554029589280
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,7 +117,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3.31, y: 3.31}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -111,37 +125,52 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0.5}
-      - {x: -0.15234375, y: 0.47265625}
-      - {x: -0.29296875, y: 0.40234375}
-      - {x: -0.40234375, y: 0.29296875}
-      - {x: -0.47265625, y: 0.15234375}
-      - {x: -0.5, y: 0}
-      - {x: -0.47265625, y: -0.15234375}
-      - {x: -0.40234375, y: -0.29296875}
-      - {x: -0.29296875, y: -0.40234375}
-      - {x: -0.15234375, y: -0.47265625}
-      - {x: 0, y: -0.5}
-      - {x: 0.15234375, y: -0.47265625}
-      - {x: 0.29296875, y: -0.40234375}
-      - {x: 0.40234375, y: -0.29296875}
-      - {x: 0.47265625, y: -0.15234375}
-      - {x: 0.5, y: 0}
-      - {x: 0.47265625, y: 0.15234375}
-      - {x: 0.40234375, y: 0.29296875}
-      - {x: 0.29296875, y: 0.40234375}
-      - {x: 0.15234375, y: 0.47265625}
---- !u!114 &519705777211575350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6582468946042127727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e16532ac7afde248aba896e9a2808c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  rotationSpeed: 20
+    - - {x: -0.015, y: -0.92499995}
+      - {x: 0.16499999, y: -0.865}
+      - {x: 0.325, y: -0.815}
+      - {x: 0.565, y: -0.78499997}
+      - {x: 0.675, y: -0.745}
+      - {x: 0.865, y: -0.655}
+      - {x: 0.965, y: -0.625}
+      - {x: 1.045, y: -0.575}
+      - {x: 1.285, y: -0.375}
+      - {x: 1.355, y: -0.295}
+      - {x: 1.365, y: -0.185}
+      - {x: 1.365, y: -0.095}
+      - {x: 1.355, y: -0.055}
+      - {x: 1.2149999, y: 0.21499999}
+      - {x: 1.155, y: 0.355}
+      - {x: 1.0649999, y: 0.49499997}
+      - {x: 1.025, y: 0.49499997}
+      - {x: 0.935, y: 0.60499996}
+      - {x: 0.835, y: 0.765}
+      - {x: 0.755, y: 0.815}
+      - {x: 0.565, y: 0.815}
+      - {x: 0.45499998, y: 0.85499996}
+      - {x: 0.255, y: 0.885}
+      - {x: 0.125, y: 0.865}
+      - {x: -0.105, y: 0.875}
+      - {x: -0.125, y: 0.885}
+      - {x: -0.265, y: 0.885}
+      - {x: -0.33499998, y: 0.85499996}
+      - {x: -0.375, y: 0.885}
+      - {x: -0.525, y: 0.885}
+      - {x: -0.59499997, y: 0.85499996}
+      - {x: -0.755, y: 0.765}
+      - {x: -0.875, y: 0.675}
+      - {x: -0.995, y: 0.575}
+      - {x: -0.97499996, y: 0.525}
+      - {x: -1.165, y: 0.435}
+      - {x: -1.275, y: 0.145}
+      - {x: -1.275, y: -0.375}
+      - {x: -1.245, y: -0.465}
+      - {x: -1.095, y: -0.66499996}
+      - {x: -0.995, y: -0.685}
+      - {x: -0.98499995, y: -0.78499997}
+      - {x: -0.935, y: -0.85499996}
+      - {x: -0.805, y: -0.945}
+      - {x: -0.66499996, y: -0.98499995}
+      - {x: -0.60499996, y: -0.97499996}
+      - {x: -0.375, y: -0.945}
+      - {x: -0.255, y: -0.85499996}
+      - {x: -0.114999995, y: -0.935}
