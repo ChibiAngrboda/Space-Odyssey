@@ -10,6 +10,8 @@ public class player : MonoBehaviour
     [Header("Caméra")]
     public GameObject cam;
     public float camShift;
+
+
     [Space(5)]
     [Header("Mouvements")]
     public float thrust = 10f;
@@ -17,6 +19,8 @@ public class player : MonoBehaviour
     public float speed;
     public float slow;
     public float acceleration;
+
+
     [Space(5)]
     [Header("Collectables")]
     public int fioleNB;
@@ -24,13 +28,18 @@ public class player : MonoBehaviour
     public GameObject powerUP;
     private Transform Shield;
     public bool IsShieldActive = false;
+
+
     [Space(5)]
     [Header("UI")]
     public TMP_Text ScoreText;
+    public float Score;
     public GameObject Alien;
     public TMP_Text DistanceText;
     public float distance;
     public RectTransform Indicateur;
+
+    public float offset;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +47,7 @@ public class player : MonoBehaviour
         Shield = transform.Find("Shield");
         m_rigidbody = GetComponent <Rigidbody2D>();
         Alien = GameObject.Find("Alien");
-        //Indicateur = GameObject.Find("Indicateur");
+        
     }
 
     // Update is called once per frame
@@ -81,8 +90,9 @@ public class player : MonoBehaviour
         speed += acceleration;
 
         // score
-
-        ScoreText.text = "Samples collected = " + fioleNB.ToString();
+        Score = gameObject.transform.position.x;
+        int roundedScore = Mathf.RoundToInt(Score);
+        ScoreText.text = "Score = " + roundedScore.ToString();
 
         // affiche distance alien
         distance = gameObject.transform.position.x - Alien.transform.position.x;
@@ -93,9 +103,13 @@ public class player : MonoBehaviour
         /*
         Transform playerPos = gameObject.transform;
         Camera camera = Camera.main;
-        Vector3 playerScreenPos = camera.WorldToScreenPoint(playerPos.position);
-        Indicateur.position = new Vector3(Indicateur.position.x, playerScreenPos.y, Indicateur.position.z);
-        Debug.Log("Player Position: " + playerPos.position + " Indicator Position: " + Indicateur.position);
+        Vector3 playerScreenPos = RectTransformUtility.WorldToScreenPoint(camera, (Vector2)playerPos.position);
+
+        Indicateur.anchoredPosition= new Vector3(Indicateur.position.x, playerScreenPos.y - offset, Indicateur.position.z);
+        //healthBar.anchoredPosition = screenPoint - canvasRectT.sizeDelta / 2f;
+        //Indicateur.anchoredPosition = (Vector2)playerScreenPos - Indicateur.sizeDelta / 2f;
+
+       // Debug.Log("Player Position: " + playerPos.position + " Indicator Position: " + Indicateur.position);
         */
 
 
