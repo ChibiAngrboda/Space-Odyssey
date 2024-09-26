@@ -84,7 +84,7 @@ public class player : MonoBehaviour
         if (gameObject.transform.position.y <= -5)
         {
             Destroy(gameObject);
-            SceneManager.LoadScene("MainScène");
+            SceneManager.LoadScene("Menu");
         }
 
 
@@ -137,7 +137,7 @@ public class player : MonoBehaviour
         if (collision.gameObject.tag == "Alien")
         {
             Destroy(gameObject);
-            SceneManager.LoadScene("MainScène");
+            SceneManager.LoadScene("Menu");
 
         }
         if (collision.gameObject.tag == "PowerUP")
