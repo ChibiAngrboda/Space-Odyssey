@@ -158,6 +158,8 @@ public class player : MonoBehaviour
         if (collision.gameObject.tag == "Alien")
         {
             Destroy(gameObject);
+            int playerScore = Mathf.RoundToInt(Score); ;
+            CheckAndSaveScore(playerScore);
             SceneManager.LoadScene("Menu");
 
         }
@@ -215,4 +217,17 @@ public class player : MonoBehaviour
         }
 
     }
+
+    public void CheckAndSaveScore(int playerScore)
+    {
+        int bestScore = PlayerPrefs.GetInt("BestScore", 0);
+
+        if (playerScore > bestScore)
+        {
+            PlayerPrefs.SetInt("BestScore", playerScore);
+            PlayerPrefs.Save();
+        }
+    }
+
+
 }
