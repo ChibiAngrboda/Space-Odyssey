@@ -40,7 +40,11 @@ public class player : MonoBehaviour
     public float distance;
     public RectTransform Indicateur;
 
-    public float offset;
+    [Space(5)]
+    [Header("Appear")]
+    public GameObject bird;
+    public int birdCD;
+    //public float offset;
     // Start is called before the first frame update
     void Start()
     {
@@ -150,6 +154,23 @@ public class player : MonoBehaviour
                 IsShieldActive = true;
             }
             
+
+        }
+
+        if (collision.gameObject.tag == "Obstacle")
+        {
+            Destroy(collision.gameObject);
+
+            if (IsShieldActive == false)
+            {
+                speed = speed * slow;
+            }
+            else if (IsShieldActive == true)
+            {
+                Shield.gameObject.SetActive(false);
+                IsShieldActive = false;
+
+            }
 
         }
     }

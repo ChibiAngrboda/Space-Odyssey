@@ -15,7 +15,7 @@ public class Rock : MonoBehaviour
         if (rb != null)
         {
             // force aléatoire 
-            Vector2 force = new Vector2(Random.Range(-7f, 7f), Random.Range(8f, 14f));
+            Vector2 force = new Vector2(Random.Range(-7f, 7f), Random.Range(8f, 20f));
             rb.AddForce(force, ForceMode2D.Impulse);
             
         }
