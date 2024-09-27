@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using JetBrains.Annotations;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class player : MonoBehaviour
 {
@@ -39,6 +40,7 @@ public class player : MonoBehaviour
     public TMP_Text DistanceText;
     public float distance;
     public RectTransform Indicateur;
+    public Slider SliderShield;
 
     [Space(5)]
     [Header("Appear")]
@@ -50,6 +52,7 @@ public class player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         cam = GameObject.Find("Main Camera");
         Shield = transform.Find("Shield");
         UpFlame = transform.Find("UpFire");
@@ -57,6 +60,7 @@ public class player : MonoBehaviour
         BackFlame2 = transform.Find("BackFire2");
         m_rigidbody = GetComponent <Rigidbody2D>();
         Alien = GameObject.Find("Alien");
+        SliderShield.value = bonusCD;
         
     }
 
@@ -71,7 +75,7 @@ public class player : MonoBehaviour
             cam.transform.position = new Vector3(cam.transform.position.x, gameObject.transform.position.y, cam.transform.position.z);
         }
 
-
+        SliderShield.value = bonusCD;
         //controles : 
         if (Input.GetMouseButton(0))
         {
