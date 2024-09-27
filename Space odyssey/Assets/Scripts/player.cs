@@ -43,13 +43,18 @@ public class player : MonoBehaviour
     [Space(5)]
     [Header("Appear")]
     public GameObject bird;
-    public int birdCD;
+    public Transform UpFlame;
+    public Transform BackFlame1;
+    public Transform BackFlame2;
     //public float offset;
     // Start is called before the first frame update
     void Start()
     {
         cam = GameObject.Find("Main Camera");
         Shield = transform.Find("Shield");
+        UpFlame = transform.Find("UpFire");
+        BackFlame1 = transform.Find("BackFire1");
+        BackFlame2 = transform.Find("BackFire2");
         m_rigidbody = GetComponent <Rigidbody2D>();
         Alien = GameObject.Find("Alien");
         
@@ -72,10 +77,12 @@ public class player : MonoBehaviour
         {
 
             m_rigidbody.AddForce(transform.up, (ForceMode2D)(thrust));
+            UpFlame.gameObject.SetActive(true);
 
             // limiter la poussée
             m_rigidbody.velocity = Vector3.ClampMagnitude(m_rigidbody.velocity, 10f);
         }
+        else { UpFlame.gameObject.SetActive(false); }
         // couper l'inertie du addforce
         if (Input.GetMouseButtonUp(0))
         {
@@ -118,6 +125,16 @@ public class player : MonoBehaviour
        // Debug.Log("Player Position: " + playerPos.position + " Indicator Position: " + Indicateur.position);
         */
 
+        if (speed < 0.2f)
+        {
+            BackFlame1.gameObject.SetActive(true);
+            BackFlame2.gameObject.SetActive(false);
+        }
+        else
+        {
+            BackFlame1.gameObject.SetActive(false);
+            BackFlame2.gameObject.SetActive(true);
+        }
 
         if (bonusCD >= 25)
         {
