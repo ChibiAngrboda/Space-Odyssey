@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8985233870473363035}
   - component: {fileID: 5429384917612434422}
   - component: {fileID: -6137554763486607400}
+  - component: {fileID: -1105831312369553418}
   m_Layer: 0
   m_Name: fioleBIG
   m_TagString: FioleBIG
@@ -119,3 +120,18 @@ PolygonCollider2D:
       - {x: 0.7122383, y: -0.9754134}
       - {x: 0.2534418, y: 0.08282465}
       - {x: 0.29790878, y: 0.57822883}
+--- !u!114 &-1105831312369553418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6952230584776474732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c100ec935c184df4eae1cecc0a7ed9b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartPosX: 0
+  StartPosY: 0
+  StartPosZ: 0
