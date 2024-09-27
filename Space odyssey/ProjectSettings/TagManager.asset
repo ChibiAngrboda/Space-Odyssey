@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Segment
+  - Ground
+  - Obstacle
+  - Fiole
+  - Alien
+  - PowerUP
+  - FioleBIG
   layers:
   - Default
   - TransparentFX

@@ -164,6 +164,13 @@ public class player : MonoBehaviour
             bonusCD += 1;
             speed += 0.01f;
         }
+        if (collision.gameObject.tag == "FioleBIG")
+        {
+            Destroy(collision.gameObject);
+            fioleNB += 1;
+            bonusCD += 1;
+            speed += 0.02f;
+        }
         if (collision.gameObject.tag == "Alien")
         {
             Destroy(gameObject);
