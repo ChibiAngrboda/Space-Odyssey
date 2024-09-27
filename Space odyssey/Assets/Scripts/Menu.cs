@@ -17,6 +17,17 @@ public class Menu : MonoBehaviour
         int lastScore = PlayerPrefs.GetInt("lastScore", 0);
         lastScoreText.text = "Last Score"+ "\n" + lastScore;
     }
+
+    public void ResetScore()
+    {
+        PlayerPrefs.SetInt("BestScore", 0);
+        PlayerPrefs.SetInt("lastScore", 0);
+
+        int bestScore = PlayerPrefs.GetInt("BestScore", 0);
+        bestScoreText.text = "Best Score" + "\n" + bestScore;
+        int lastScore = PlayerPrefs.GetInt("lastScore", 0);
+        lastScoreText.text = "Last Score" + "\n" + lastScore;
+    }
     public void StartGame()
     {
         SceneManager.LoadScene("MainScène");

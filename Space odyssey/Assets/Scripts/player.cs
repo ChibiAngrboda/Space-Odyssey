@@ -145,7 +145,7 @@ public class player : MonoBehaviour
         }
 
     }
-    
+    /*
     private void Update()
     {
         // couper l'inertie du addforce
@@ -154,7 +154,7 @@ public class player : MonoBehaviour
             m_rigidbody.velocity = Vector3.up * stopThrust * Time.deltaTime;
         }
     }
-    
+    */
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Fiole")

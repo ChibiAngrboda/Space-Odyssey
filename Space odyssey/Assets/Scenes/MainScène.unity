@@ -2122,7 +2122,7 @@ MonoBehaviour:
   thrust: 10000
   stopThrust: 1500
   speed: 0.1
-  slow: 0.4
+  slow: 0.7
   acceleration: 0.00015
   fioleNB: 0
   bonusCD: 0
