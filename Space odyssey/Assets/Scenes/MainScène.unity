@@ -2120,7 +2120,7 @@ MonoBehaviour:
   cam: {fileID: 519420028}
   camShift: 6
   thrust: 10000
-  stopThrust: 70
+  stopThrust: 1500
   speed: 0.1
   slow: 0.4
   acceleration: 0.00015

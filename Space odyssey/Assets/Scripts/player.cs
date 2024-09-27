@@ -78,11 +78,16 @@ public class player : MonoBehaviour
 
             m_rigidbody.AddForce(transform.up, (ForceMode2D)(thrust));
             UpFlame.gameObject.SetActive(true);
+            m_rigidbody.gravityScale = 1;
 
             // limiter la poussée
             m_rigidbody.velocity = Vector3.ClampMagnitude(m_rigidbody.velocity, 10f);
         }
-        else { UpFlame.gameObject.SetActive(false); }
+        else 
+        { 
+            UpFlame.gameObject.SetActive(false);
+            m_rigidbody.gravityScale = 3;
+        }
         
 
 
@@ -140,16 +145,16 @@ public class player : MonoBehaviour
         }
 
     }
-
+    
     private void Update()
     {
         // couper l'inertie du addforce
         if (Input.GetMouseButtonUp(0))
         {
-            m_rigidbody.velocity = Vector3.up * -stopThrust * Time.deltaTime;
+            m_rigidbody.velocity = Vector3.up * stopThrust * Time.deltaTime;
         }
     }
-
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Fiole")
