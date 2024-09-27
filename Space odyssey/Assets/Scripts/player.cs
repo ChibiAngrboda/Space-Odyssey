@@ -172,7 +172,7 @@ public class player : MonoBehaviour
         {
             Destroy(collision.gameObject);
             fioleNB += 1;
-            bonusCD += 1;
+            bonusCD += 2;
             speed += 0.02f;
         }
         if (collision.gameObject.tag == "Alien")
