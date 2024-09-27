@@ -1186,6 +1186,12 @@ MonoBehaviour:
   - {fileID: 2196953148112592831, guid: 0fdd79b610ef92441a63ab533347ef2a, type: 3}
   - {fileID: 2196953148112592831, guid: 8e125f14de3e3cb4ab9261c2a30c3476, type: 3}
   - {fileID: 2196953148112592831, guid: 893e897d07e3f094e9e46512b98f43b7, type: 3}
+  - {fileID: 2196953148112592831, guid: f80c747e360825e47865b9a2c7bea127, type: 3}
+  - {fileID: 2196953148112592831, guid: 197a013d59aade441947ad80c34a6923, type: 3}
+  - {fileID: 2196953148112592831, guid: 197a013d59aade441947ad80c34a6923, type: 3}
+  - {fileID: 2196953148112592831, guid: b8efa541c6214884da90e764b72d7fc7, type: 3}
+  - {fileID: 2196953148112592831, guid: 1ae23a800e97de444a8fb2e869e7c34e, type: 3}
+  - {fileID: 2196953148112592831, guid: 4ca889f76aee53b4e88f445ca27bbe2e, type: 3}
   player: {fileID: 1329913463}
   spawnDistance: 20
   Spawner: {fileID: 0}
