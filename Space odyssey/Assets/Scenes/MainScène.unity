@@ -988,6 +988,10 @@ PrefabInstance:
       propertyPath: MainCam
       value: 
       objectReference: {fileID: 519420028}
+    - target: {fileID: 2501231996779562148, guid: d0c270707ac2e1d49bc9b4fab6e66015, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2501231996850390394, guid: d0c270707ac2e1d49bc9b4fab6e66015, type: 3}
       propertyPath: MainCam
       value: 
@@ -1039,6 +1043,10 @@ PrefabInstance:
     - target: {fileID: 2501231997025609885, guid: d0c270707ac2e1d49bc9b4fab6e66015, type: 3}
       propertyPath: m_Name
       value: BG
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501231997271772439, guid: d0c270707ac2e1d49bc9b4fab6e66015, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2501231997714126114, guid: d0c270707ac2e1d49bc9b4fab6e66015, type: 3}
       propertyPath: MainCam
