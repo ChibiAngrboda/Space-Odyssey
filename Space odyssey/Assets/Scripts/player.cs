@@ -136,7 +136,7 @@ public class player : MonoBehaviour
             BackFlame2.gameObject.SetActive(true);
         }
 
-        if (bonusCD >= 25)
+        if (bonusCD >= 10)
         {
             //int randomNB = Random.Range(0, 11);
             Instantiate(powerUP, new Vector3(gameObject.transform.position.x + 20, gameObject.transform.position.y, powerUP.transform.position.z), new Quaternion(0,0,0,0));
@@ -221,7 +221,9 @@ public class player : MonoBehaviour
     public void CheckAndSaveScore(int playerScore)
     {
         int bestScore = PlayerPrefs.GetInt("BestScore", 0);
-
+        int lastScore = PlayerPrefs.GetInt("lastScore",0);
+        int SCORE = Mathf.RoundToInt(Score);
+        PlayerPrefs.SetInt("lastScore", SCORE);
         if (playerScore > bestScore)
         {
             PlayerPrefs.SetInt("BestScore", playerScore);
