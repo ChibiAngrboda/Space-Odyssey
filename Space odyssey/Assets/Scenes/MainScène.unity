@@ -972,38 +972,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 519420032}
     m_Modifications:
-    - target: {fileID: 2501231996134412170, guid: d0c270707ac2e1d49bc9b4fab6e66015, type: 3}
+    - target: {fileID: 224992817034506331, guid: d0c270707ac2e1d49bc9b4fab6e66015, type: 3}
       propertyPath: MainCam
       value: 
       objectReference: {fileID: 519420028}
     - target: {fileID: 2501231996134412170, guid: d0c270707ac2e1d49bc9b4fab6e66015, type: 3}
-      propertyPath: parallaxEffect
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2501231996159899770, guid: d0c270707ac2e1d49bc9b4fab6e66015, type: 3}
       propertyPath: MainCam
       value: 
       objectReference: {fileID: 519420028}
     - target: {fileID: 2501231996159899770, guid: d0c270707ac2e1d49bc9b4fab6e66015, type: 3}
-      propertyPath: parallaxEffect
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2501231996411070803, guid: d0c270707ac2e1d49bc9b4fab6e66015, type: 3}
       propertyPath: MainCam
       value: 
       objectReference: {fileID: 519420028}
     - target: {fileID: 2501231996411070803, guid: d0c270707ac2e1d49bc9b4fab6e66015, type: 3}
-      propertyPath: parallaxEffect
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2501231996850390394, guid: d0c270707ac2e1d49bc9b4fab6e66015, type: 3}
       propertyPath: MainCam
       value: 
       objectReference: {fileID: 519420028}
     - target: {fileID: 2501231996850390394, guid: d0c270707ac2e1d49bc9b4fab6e66015, type: 3}
-      propertyPath: parallaxEffect
-      value: 0.1
-      objectReference: {fileID: 0}
+      propertyPath: MainCam
+      value: 
+      objectReference: {fileID: 519420028}
     - target: {fileID: 2501231997025609884, guid: d0c270707ac2e1d49bc9b4fab6e66015, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1052,11 +1040,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BG
       objectReference: {fileID: 0}
-    - target: {fileID: 2501231997025609885, guid: d0c270707ac2e1d49bc9b4fab6e66015, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2501231997714126114, guid: d0c270707ac2e1d49bc9b4fab6e66015, type: 3}
+      propertyPath: MainCam
+      value: 
+      objectReference: {fileID: 519420028}
+    - target: {fileID: 6981299665567140662, guid: d0c270707ac2e1d49bc9b4fab6e66015, type: 3}
       propertyPath: MainCam
       value: 
       objectReference: {fileID: 519420028}
