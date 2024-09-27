@@ -13,9 +13,9 @@ public class Menu : MonoBehaviour
     private void Start()
     {
         int bestScore = PlayerPrefs.GetInt("BestScore", 0);
-        bestScoreText.text = "Best Score : " + bestScore;
+        bestScoreText.text = "Best Score"+ "\n" + bestScore;
         int lastScore = PlayerPrefs.GetInt("lastScore", 0);
-        lastScoreText.text = "Last Score : " + lastScore;
+        lastScoreText.text = "Last Score"+ "\n" + lastScore;
     }
     public void StartGame()
     {
