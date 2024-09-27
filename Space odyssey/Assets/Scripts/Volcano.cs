@@ -21,7 +21,7 @@ public class Volcano : MonoBehaviour
         playerDistance = Vector3.Distance(gameObject.transform.position, player.transform.position);
         
         cooldown -= 1;
-        if (cooldown <= 0 && playerDistance>3)
+        if (cooldown <= 0 && playerDistance>5)
         {
             Instantiate(rock,new Vector3(gameObject.transform.position.x,gameObject.transform.position.y + 2.5f, 0), new Quaternion(0,0,0,0));
             cooldown += baseCD;

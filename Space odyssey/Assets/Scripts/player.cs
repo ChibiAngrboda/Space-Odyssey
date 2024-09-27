@@ -83,11 +83,7 @@ public class player : MonoBehaviour
             m_rigidbody.velocity = Vector3.ClampMagnitude(m_rigidbody.velocity, 10f);
         }
         else { UpFlame.gameObject.SetActive(false); }
-        // couper l'inertie du addforce
-        if (Input.GetMouseButtonUp(0))
-        {
-            m_rigidbody.velocity = Vector3.up * -stopThrust;
-        }
+        
 
 
         // tue le joueur si il tombe 
@@ -145,6 +141,14 @@ public class player : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        // couper l'inertie du addforce
+        if (Input.GetMouseButtonUp(0))
+        {
+            m_rigidbody.velocity = Vector3.up * -stopThrust * Time.deltaTime;
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
