@@ -5,6 +5,7 @@ using TMPro;
 using JetBrains.Annotations;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Rendering.Universal;
 
 public class player : MonoBehaviour
 {
@@ -57,6 +58,14 @@ public class player : MonoBehaviour
     public GameObject AudioShield;  
     public GameObject AudioShield2;
     public AudioSource Pulse;
+
+    [Space(5)]
+    [Header("Lights")]
+    public Light2D lightFire;
+    public float minIntensity;
+    public float maxIntensity;
+    public float fluctuationSpeed;
+    private float time;
     //public float offset;
     // Start is called before the first frame update
     void Start()
@@ -77,6 +86,10 @@ public class player : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        time += Time.deltaTime * fluctuationSpeed;
+        float intensity = Mathf.Lerp(minIntensity, maxIntensity, (Mathf.Sin(time) + 1) / 2);
+        lightFire.intensity = intensity;
+
         // caméra qui suit sur x 
         cam.transform.position = new Vector3(gameObject.transform.position.x + camShift, cam.transform.position.y, cam.transform.position.z);
         // caméra qui suit sur y un peu mais pas trop
@@ -147,6 +160,7 @@ public class player : MonoBehaviour
             BackFlame1.gameObject.SetActive(true);
             BackFlame2.gameObject.SetActive(false);
             BackFlame3.gameObject.SetActive(false);
+            lightFire.transform.localScale = new Vector3(1, 1, 1);
         }
         else if (speed < 0.4f)
         {
@@ -154,6 +168,7 @@ public class player : MonoBehaviour
             BackFlame1.gameObject.SetActive(false);
             BackFlame2.gameObject.SetActive(true);
             BackFlame3.gameObject.SetActive(false);
+            lightFire.transform.localScale = new Vector3(1.3f, 1.3f, 1.3f);
         }
         else
         {
@@ -161,6 +176,7 @@ public class player : MonoBehaviour
             BackFlame1.gameObject.SetActive(false);
             BackFlame2.gameObject.SetActive(false);
             BackFlame3.gameObject.SetActive(true);
+            lightFire.transform.localScale = new Vector3(1.7f, 1.7f, 1.7f);
         }
 
         if (bonusCD >= 10)
@@ -171,16 +187,8 @@ public class player : MonoBehaviour
         }
 
     }
-    /*
-    private void Update()
-    {
-        // couper l'inertie du addforce
-        if (Input.GetMouseButtonUp(0))
-        {
-            m_rigidbody.velocity = Vector3.up * stopThrust * Time.deltaTime;
-        }
-    }
-    */
+   
+   
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Fiole")
