@@ -13,7 +13,7 @@ public class LevelGenerator : MonoBehaviour
     void Start()
     {
         //Spawner = GameObject.Find("Spawner");
-        lastSegmentEndX = 0f; 
+        lastSegmentEndX = 48f; 
         SpawnSegment(); 
     }
 
