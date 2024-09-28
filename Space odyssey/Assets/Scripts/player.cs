@@ -58,6 +58,7 @@ public class player : MonoBehaviour
     public GameObject AudioShield;  
     public GameObject AudioShield2;
     public AudioSource Pulse;
+    public GameObject AudioFioles;
 
     [Space(5)]
     [Header("Lights")]
@@ -193,6 +194,7 @@ public class player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Fiole")
         {
+            Instantiate(AudioFioles, transform);
             Destroy(collision.gameObject);
             fioleNB += 1;
             bonusCD += 1;
@@ -200,6 +202,7 @@ public class player : MonoBehaviour
         }
         if (collision.gameObject.tag == "FioleBIG")
         {
+            Instantiate(AudioFioles, transform);
             Destroy(collision.gameObject);
             fioleNB += 1;
             bonusCD += 2;
