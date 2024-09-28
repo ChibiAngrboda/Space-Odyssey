@@ -48,6 +48,7 @@ public class player : MonoBehaviour
     public Transform UpFlame;
     public Transform BackFlame1;
     public Transform BackFlame2;
+    public Transform BackFlame3;
 
     [Space(5)]
     [Header("Audios")]
@@ -55,16 +56,18 @@ public class player : MonoBehaviour
     public GameObject AudioRock;
     public GameObject AudioShield;  
     public GameObject AudioShield2;
+    public AudioSource Pulse;
     //public float offset;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Pulse = transform.Find("pulseAudio").GetComponent<AudioSource>();
         cam = GameObject.Find("Main Camera");
         Shield = transform.Find("Shield");
         UpFlame = transform.Find("UpFire");
         BackFlame1 = transform.Find("BackFire1");
         BackFlame2 = transform.Find("BackFire2");
+        BackFlame3 = transform.Find("BackFire3");
         m_rigidbody = GetComponent <Rigidbody2D>();
         Alien = GameObject.Find("Alien");
         SliderShield.value = bonusCD;
@@ -86,7 +89,7 @@ public class player : MonoBehaviour
         //controles : 
         if (Input.GetMouseButton(0))
         {
-
+            Pulse.Play();
             m_rigidbody.AddForce(transform.up, (ForceMode2D)(thrust));
             UpFlame.gameObject.SetActive(true);
             m_rigidbody.gravityScale = 1;
@@ -96,6 +99,7 @@ public class player : MonoBehaviour
         }
         else 
         { 
+            Pulse.Stop();
             UpFlame.gameObject.SetActive(false);
             m_rigidbody.gravityScale = 3;
         }
@@ -137,15 +141,26 @@ public class player : MonoBehaviour
        // Debug.Log("Player Position: " + playerPos.position + " Indicator Position: " + Indicateur.position);
         */
 
-        if (speed < 0.5f)
+        if (speed < 0.3f)
         {
+            gameObject.GetComponent<AudioSource>().volume = 0.02f;
             BackFlame1.gameObject.SetActive(true);
             BackFlame2.gameObject.SetActive(false);
+            BackFlame3.gameObject.SetActive(false);
+        }
+        else if (speed < 0.4f)
+        {
+            gameObject.GetComponent<AudioSource>().volume = 0.08f;
+            BackFlame1.gameObject.SetActive(false);
+            BackFlame2.gameObject.SetActive(true);
+            BackFlame3.gameObject.SetActive(false);
         }
         else
         {
+            gameObject.GetComponent<AudioSource>().volume = 0.1f;
             BackFlame1.gameObject.SetActive(false);
-            BackFlame2.gameObject.SetActive(true);
+            BackFlame2.gameObject.SetActive(false);
+            BackFlame3.gameObject.SetActive(true);
         }
 
         if (bonusCD >= 10)
