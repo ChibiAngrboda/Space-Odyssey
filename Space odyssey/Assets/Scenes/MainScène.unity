@@ -1027,14 +1027,34 @@ PrefabInstance:
       propertyPath: MainCam
       value: 
       objectReference: {fileID: 519420028}
+    - target: {fileID: 2501231996134412277, guid: d0c270707ac2e1d49bc9b4fab6e66015, type: 3}
+      propertyPath: m_Color.a
+      value: 0.9098039
+      objectReference: {fileID: 0}
     - target: {fileID: 2501231996159899770, guid: d0c270707ac2e1d49bc9b4fab6e66015, type: 3}
       propertyPath: MainCam
       value: 
       objectReference: {fileID: 519420028}
+    - target: {fileID: 2501231996159899771, guid: d0c270707ac2e1d49bc9b4fab6e66015, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.0316
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501231996159899771, guid: d0c270707ac2e1d49bc9b4fab6e66015, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.4114
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501231996167612433, guid: d0c270707ac2e1d49bc9b4fab6e66015, type: 3}
+      propertyPath: m_Color.a
+      value: 0.9098039
+      objectReference: {fileID: 0}
     - target: {fileID: 2501231996411070803, guid: d0c270707ac2e1d49bc9b4fab6e66015, type: 3}
       propertyPath: MainCam
       value: 
       objectReference: {fileID: 519420028}
+    - target: {fileID: 2501231996739407326, guid: d0c270707ac2e1d49bc9b4fab6e66015, type: 3}
+      propertyPath: m_Color.a
+      value: 0.9098039
+      objectReference: {fileID: 0}
     - target: {fileID: 2501231996779562148, guid: d0c270707ac2e1d49bc9b4fab6e66015, type: 3}
       propertyPath: m_SortingOrder
       value: 4
@@ -1110,6 +1130,14 @@ PrefabInstance:
     - target: {fileID: 2501231997714126125, guid: d0c270707ac2e1d49bc9b4fab6e66015, type: 3}
       propertyPath: m_SortingOrder
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756172933519259592, guid: d0c270707ac2e1d49bc9b4fab6e66015, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.0316
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756172933519259592, guid: d0c270707ac2e1d49bc9b4fab6e66015, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.4114
       objectReference: {fileID: 0}
     - target: {fileID: 6635426046550461305, guid: d0c270707ac2e1d49bc9b4fab6e66015, type: 3}
       propertyPath: m_SortingOrder
@@ -2093,7 +2121,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ded98d452af32c341bff3712aee2fbd6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
