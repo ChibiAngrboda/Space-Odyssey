@@ -6,6 +6,7 @@ public class Bird : MonoBehaviour
 {
     public float speed;
     public GameObject player;
+    
 
     private void Start()
     {
@@ -20,6 +21,7 @@ public class Bird : MonoBehaviour
 
         if (gameObject.transform.position.x < player.transform.position.x - 8)
         {
+            
             Destroy(gameObject);
         }
     }

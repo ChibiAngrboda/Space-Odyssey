@@ -48,6 +48,10 @@ public class player : MonoBehaviour
     public Transform UpFlame;
     public Transform BackFlame1;
     public Transform BackFlame2;
+
+    [Space(5)]
+    [Header("Audios")]
+    public GameObject AudioBirdDead;
     //public float offset;
     // Start is called before the first frame update
     void Start()
@@ -199,6 +203,10 @@ public class player : MonoBehaviour
         if (collision.gameObject.tag == "Obstacle")
         {
             Destroy(collision.gameObject);
+            if (collision.name == "Bird")
+            {
+                Instantiate(AudioBirdDead, transform);
+            }
 
             if (IsShieldActive == false)
             {
