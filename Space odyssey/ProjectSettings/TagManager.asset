@@ -11,6 +11,8 @@ TagManager:
   - Alien
   - PowerUP
   - FioleBIG
+  - rock
+  - bird
   layers:
   - Default
   - TransparentFX

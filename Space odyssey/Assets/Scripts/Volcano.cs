@@ -23,6 +23,8 @@ public class Volcano : MonoBehaviour
         cooldown -= 1;
         if (cooldown <= 0 && playerDistance>5)
         {
+            gameObject.GetComponent<AudioSource>().pitch = Random.Range(0.7f, 1.5f);
+            gameObject.GetComponent<AudioSource>().Play();
             Instantiate(rock,new Vector3(gameObject.transform.position.x,gameObject.transform.position.y + 2.5f, 0), new Quaternion(0,0,0,0));
             cooldown += baseCD;
         }

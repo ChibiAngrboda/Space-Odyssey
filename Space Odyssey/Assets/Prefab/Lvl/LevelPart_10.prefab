@@ -588,7 +588,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3597031442001794793, guid: 32fbb67a69fb6df4fbfb3490bbc8259e, type: 3}
       propertyPath: m_Name
-      value: rock (1)
+      value: rock
       objectReference: {fileID: 0}
     - target: {fileID: 3597031442001794797, guid: 32fbb67a69fb6df4fbfb3490bbc8259e, type: 3}
       propertyPath: m_RootOrder
@@ -650,7 +650,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3597031442001794793, guid: 32fbb67a69fb6df4fbfb3490bbc8259e, type: 3}
       propertyPath: m_Name
-      value: rock (2)
+      value: rock
       objectReference: {fileID: 0}
     - target: {fileID: 3597031442001794797, guid: 32fbb67a69fb6df4fbfb3490bbc8259e, type: 3}
       propertyPath: m_RootOrder

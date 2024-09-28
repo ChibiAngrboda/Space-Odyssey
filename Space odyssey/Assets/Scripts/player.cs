@@ -52,6 +52,9 @@ public class player : MonoBehaviour
     [Space(5)]
     [Header("Audios")]
     public GameObject AudioBirdDead;
+    public GameObject AudioRock;
+    public GameObject AudioShield;  
+    public GameObject AudioShield2;
     //public float offset;
     // Start is called before the first frame update
     void Start()
@@ -189,24 +192,44 @@ public class player : MonoBehaviour
         }
         if (collision.gameObject.tag == "PowerUP")
         {
+
             
             Destroy(collision.gameObject);
             if (IsShieldActive == false)
             {
+                Instantiate(AudioShield2, transform);
                 Shield.gameObject.SetActive(true);
                 IsShieldActive = true;
             }
             
 
         }
-
-        if (collision.gameObject.tag == "Obstacle")
+        
+            if (collision.gameObject.tag == "rock")
         {
             Destroy(collision.gameObject);
-            if (collision.name == "Bird")
+            AudioRock.GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.8f);
+            Instantiate(AudioRock, transform);
+           
+            if (IsShieldActive == false)
             {
-                Instantiate(AudioBirdDead, transform);
+                speed = speed * slow;
             }
+            else if (IsShieldActive == true)
+            {
+                Instantiate(AudioShield, transform);
+                Shield.gameObject.SetActive(false);
+                IsShieldActive = false;
+
+            }
+
+        }
+       
+        if (collision.gameObject.tag == "bird")
+        {
+            Destroy(collision.gameObject);
+            AudioBirdDead.GetComponent<AudioSource>().pitch = Random.Range(0.5f, 1.5f);
+            Instantiate(AudioBirdDead, transform);
 
             if (IsShieldActive == false)
             {
@@ -214,6 +237,7 @@ public class player : MonoBehaviour
             }
             else if (IsShieldActive == true)
             {
+                Instantiate(AudioShield, transform);
                 Shield.gameObject.SetActive(false);
                 IsShieldActive = false;
 
@@ -223,7 +247,7 @@ public class player : MonoBehaviour
     }
 
     
-    
+    /*
     private void OnCollisionEnter2D(Collision2D collision)
     {
         
@@ -244,7 +268,7 @@ public class player : MonoBehaviour
             
         }
 
-    }
+    }*/
 
     public void CheckAndSaveScore(int playerScore)
     {
