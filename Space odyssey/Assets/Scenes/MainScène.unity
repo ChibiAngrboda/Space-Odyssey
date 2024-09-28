@@ -2271,6 +2271,7 @@ MonoBehaviour:
   AudioShield: {fileID: 3474709894560386092, guid: 9d78db45b80f9ff479c787135a689029, type: 3}
   AudioShield2: {fileID: 3474709894560386092, guid: c100e18d6b8f06043896bf4c09c80b1a, type: 3}
   Pulse: {fileID: 1416025412}
+  AudioFioles: {fileID: 3474709894560386092, guid: 973a72f0255afba4f815bdd1244f8b12, type: 3}
   lightFire: {fileID: 1586179488}
   minIntensity: 0.5
   maxIntensity: 1
@@ -3060,8 +3061,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.16665, y: -0.035950005, z: 0}
-    m_Extent: {x: 0.95385, y: 0.69025, z: 0}
+    m_Center: {x: 0.17445001, y: -0.034500003, z: 0}
+    m_Extent: {x: 0.96075, y: 0.6843, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
