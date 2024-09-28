@@ -137,7 +137,7 @@ public class player : MonoBehaviour
        // Debug.Log("Player Position: " + playerPos.position + " Indicator Position: " + Indicateur.position);
         */
 
-        if (speed < 0.2f)
+        if (speed < 0.5f)
         {
             BackFlame1.gameObject.SetActive(true);
             BackFlame2.gameObject.SetActive(false);
