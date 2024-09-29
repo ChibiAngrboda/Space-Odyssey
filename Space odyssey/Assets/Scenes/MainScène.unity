@@ -1084,6 +1084,10 @@ PrefabInstance:
       propertyPath: MainCam
       value: 
       objectReference: {fileID: 519420028}
+    - target: {fileID: 2501231996134412170, guid: d0c270707ac2e1d49bc9b4fab6e66015, type: 3}
+      propertyPath: parallaxEffect
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 2501231996134412277, guid: d0c270707ac2e1d49bc9b4fab6e66015, type: 3}
       propertyPath: m_Color.a
       value: 0.9098039
@@ -3118,8 +3122,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.1703, y: -0.0361, z: 0}
-    m_Extent: {x: 0.9671, y: 0.6848, z: 0}
+    m_Center: {x: 0.16679999, y: -0.04040003, z: 0}
+    m_Extent: {x: 0.95239997, y: 0.6857, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -3608,7 +3612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.27429688, g: 0.60380113, b: 0.8679245, a: 1}
+  m_Color: {r: 1, g: 0.8503309, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
