@@ -12,13 +12,20 @@ public class Menu : MonoBehaviour
     public TMP_Text lastScoreText;
     public Button Play;
     public AudioSource playSfx;
+    public GameObject next;
     private void Start()
     {
+        next = GameObject.Find("next ?...");
         int bestScore = PlayerPrefs.GetInt("BestScore", 0);
         bestScoreText.text = "Best Dive : "+ /*"\n" +*/ bestScore;
         int lastScore = PlayerPrefs.GetInt("lastScore", 0);
         lastScoreText.text = "Last Dive : "+ /*"\n" +*/ lastScore;
         Play.onClick.AddListener(PlaySound);
+        if(PlayerPrefs.GetInt("BestScore",0) >= 2679)
+        {
+            next.SetActive(true);
+        }
+        else { next.SetActive(false); }
     }
 
    void PlaySound()
