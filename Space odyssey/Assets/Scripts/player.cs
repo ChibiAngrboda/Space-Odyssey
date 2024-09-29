@@ -50,6 +50,7 @@ public class player : MonoBehaviour
     public Transform BackFlame1;
     public Transform BackFlame2;
     public Transform BackFlame3;
+    public GameObject asteroidBreak;
 
     [Space(5)]
     [Header("Audios")]
@@ -250,7 +251,32 @@ public class player : MonoBehaviour
             }
 
         }
-       
+        if (collision.gameObject.tag == "asteroid")
+        {
+            Quaternion rotation = collision.gameObject.transform.rotation;
+            Vector3 pos = collision.gameObject.transform.position;
+            
+            Instantiate(asteroidBreak, pos, rotation);
+
+            
+            AudioRock.GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.8f);
+            Instantiate(AudioRock, transform);
+            Destroy(collision.gameObject);
+
+            if (IsShieldActive == false && speed * slow >= 0.1f)
+            {
+                speed = speed * slow;
+            }
+            else if (IsShieldActive == true)
+            {
+                Instantiate(AudioShield, transform);
+                Shield.gameObject.SetActive(false);
+                IsShieldActive = false;
+
+            }
+
+        }
+
         if (collision.gameObject.tag == "bird")
         {
             Destroy(collision.gameObject);
