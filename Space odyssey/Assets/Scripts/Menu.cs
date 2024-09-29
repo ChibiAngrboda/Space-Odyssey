@@ -54,7 +54,7 @@ public class Menu : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        
+        /*
         if (isVolletUp == true) 
         {
             OpenTexts.SetActive(true);
@@ -72,7 +72,7 @@ public class Menu : MonoBehaviour
             //lastScoreText.enabled = false;
             //bestScoreText.enabled = false;
 
-        }
+        }*/
         if (isVolletUp == false && vollet.transform.position.y >= 0.23f)
         {
             vollet.transform.position += new Vector3(0, -1 * speedVollet, 0);
