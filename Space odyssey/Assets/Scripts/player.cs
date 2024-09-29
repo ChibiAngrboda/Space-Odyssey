@@ -54,6 +54,7 @@ public class player : MonoBehaviour
     public GameObject asteroidBreak;
     public GameObject rockBreak;
     public GameObject birdDead;
+    public GameObject alienDead;
 
     [Space(5)]
     [Header("Audios")]
@@ -203,6 +204,7 @@ public class player : MonoBehaviour
     }
    
    
+   
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Fiole")
@@ -223,12 +225,17 @@ public class player : MonoBehaviour
         }
         if (collision.gameObject.tag == "Alien")
         {
-            Destroy(gameObject);
+            Quaternion rotation = collision.gameObject.transform.rotation;
+            Vector3 pos = collision.gameObject.transform.position;
+            Instantiate(alienDead,pos,rotation);
+            Destroy(collision.gameObject);
+            
             int playerScore = Mathf.RoundToInt(Score); ;
             CheckAndSaveScore(playerScore);
-            SceneManager.LoadScene("Menu");
+            gameObject.SetActive(false);   //Destroy(gameObject);
 
         }
+
         if (collision.gameObject.tag == "PowerUP")
         {
 
