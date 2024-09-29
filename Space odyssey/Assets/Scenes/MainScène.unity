@@ -1910,7 +1910,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -22, y: 0}
-  m_SizeDelta: {x: 300, y: 300}
+  m_SizeDelta: {x: 450, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1197535822
 MonoBehaviour:
@@ -3129,8 +3129,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.17475, y: -0.042100012, z: 0}
-    m_Extent: {x: 0.95235, y: 0.6874, z: 0}
+    m_Center: {x: 0.17025, y: -0.04010001, z: 0}
+    m_Extent: {x: 0.95185, y: 0.69079995, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -3206,7 +3206,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 646, y: 0}
-  m_SizeDelta: {x: 300, y: 300}
+  m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1671925045
 MonoBehaviour:
@@ -3339,7 +3339,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -655, y: 0}
-  m_SizeDelta: {x: 300, y: 300}
+  m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1764845919
 MonoBehaviour:
@@ -3662,7 +3662,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4026922892897193320, guid: acb2c3a9b39ea174d8c6f898bbb0a69d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.12
+      value: -25.96
       objectReference: {fileID: 0}
     - target: {fileID: 4026922892897193320, guid: acb2c3a9b39ea174d8c6f898bbb0a69d, type: 3}
       propertyPath: m_LocalPosition.y

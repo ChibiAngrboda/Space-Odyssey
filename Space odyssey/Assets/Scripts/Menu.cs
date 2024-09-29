@@ -40,13 +40,13 @@ public class Menu : MonoBehaviour
         }
         
 
-        int maxSpeed = PlayerPrefs.GetInt("maxSpeed", 0);
+        float maxSpeed = PlayerPrefs.GetFloat("maxSpeed", 0);
         int rockDestroyed = PlayerPrefs.GetInt("rockDestroyed", 0);
         int birdKilled = PlayerPrefs.GetInt("birdKilled", 0);
         int boostCollected = PlayerPrefs.GetInt("boostCollected", 0);
         bestScoreTextSTATS.text = "Best Dive : " + /*"\n" +*/ bestScore;
         lastScoreTextSTATS.text = "last dive : " + lastScore;
-        maxSpeedTextSTATS.text = "max speed : " + maxSpeed;
+        maxSpeedTextSTATS.text = "max speed : " + maxSpeed.ToString("F3");
         rockDestroyedTextSTATS.text = "rocks destroyed : " + rockDestroyed;
         birdKilledTextSTATS.text = "birds killed : " + birdKilled;
         boostCollectedTextSTATS.text = "boost collected : " + boostCollected;
@@ -75,12 +75,15 @@ public class Menu : MonoBehaviour
         }*/
         if (isVolletUp == false && vollet.transform.position.y >= 0.23f)
         {
+            
             vollet.transform.position += new Vector3(0, -1 * speedVollet, 0);
         }
         else if (isVolletUp == true && vollet.transform.position.y <= 11)
         {
+            
             vollet.transform.position += new Vector3(0, 1 * speedVollet, 0);
         }
+        
     }
 
     void PlaySound()
@@ -95,8 +98,14 @@ public class Menu : MonoBehaviour
     public void QuitGame()
     {
         isVolletUp = !isVolletUp;
+        vollet.GetComponent<AudioSource>().Play();
+        StartCoroutine(stopSfx());
         //Application.Quit();
     }
 
-    
+    IEnumerator stopSfx()
+    {
+        yield return new WaitForSeconds(1f);
+        vollet.GetComponent<AudioSource>().Stop();
+    }
 }

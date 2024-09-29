@@ -77,7 +77,7 @@ public class player : MonoBehaviour
     [Header("PlayerPrefs")]
     public int birdKilled;
     public int rockDestroyed;
-    public int maxSpeed;
+    public float maxSpeed;
     
     //public float offset;
     // Start is called before the first frame update
@@ -100,7 +100,7 @@ public class player : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (speed > maxSpeed) { maxSpeed = Mathf.RoundToInt(speed); }
+        if (speed > maxSpeed) { maxSpeed = speed; }
         time += Time.deltaTime * fluctuationSpeed;
         float intensity = Mathf.Lerp(minIntensity, maxIntensity, (Mathf.Sin(time) + 1) / 2);
         lightFire.intensity = intensity;
@@ -363,12 +363,12 @@ public class player : MonoBehaviour
 
         int birdKilledPref = PlayerPrefs.GetInt("birdKilled", 0);
         int rockDestroyedPref = PlayerPrefs.GetInt("rockDestroyed", 0);
-        int maxSpeedPref = PlayerPrefs.GetInt("maxSpeed", 0);
+        float maxSpeedPref = PlayerPrefs.GetFloat("maxSpeed", 0);
         int boostCollectedPref = PlayerPrefs.GetInt("boostCollected", 0);
         PlayerPrefs.SetInt("boostCollected",boostCollectedPref + fioleNB);
         PlayerPrefs.SetInt("birdKilled",birdKilledPref + birdKilled);
         PlayerPrefs.SetInt("rockDestroyed",rockDestroyedPref + rockDestroyed);
-        if (maxSpeedPref < maxSpeed) { PlayerPrefs.SetInt("maxSpeed", maxSpeed); }
+        if (maxSpeedPref < maxSpeed) { PlayerPrefs.SetFloat("maxSpeed", maxSpeed); }
         PlayerPrefs.Save();
     }
 
