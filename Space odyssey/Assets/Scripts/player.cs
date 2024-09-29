@@ -77,6 +77,7 @@ public class player : MonoBehaviour
     public int birdKilled;
     public int rockDestroyed;
     public int maxSpeed;
+    
     //public float offset;
     // Start is called before the first frame update
     void Start()
@@ -356,9 +357,12 @@ public class player : MonoBehaviour
         int birdKilledPref = PlayerPrefs.GetInt("birdKilled", 0);
         int rockDestroyedPref = PlayerPrefs.GetInt("rockDestroyed", 0);
         int maxSpeedPref = PlayerPrefs.GetInt("maxSpeed", 0);
+        int boostCollectedPref = PlayerPrefs.GetInt("boostCollected", 0);
+        PlayerPrefs.SetInt("boostCollected",boostCollectedPref + fioleNB);
         PlayerPrefs.SetInt("birdKilled",birdKilledPref + birdKilled);
         PlayerPrefs.SetInt("rockDestroyed",rockDestroyedPref + rockDestroyed);
         if (maxSpeedPref < maxSpeed) { PlayerPrefs.SetInt("maxSpeed", maxSpeed); }
+        PlayerPrefs.Save();
     }
 
 
