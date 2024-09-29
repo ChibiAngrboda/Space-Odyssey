@@ -2329,6 +2329,7 @@ MonoBehaviour:
   BackFlame3: {fileID: 0}
   asteroidBreak: {fileID: 5340190902107517813, guid: 50aca69d1bd2ee540835021c4a1e5d91, type: 3}
   rockBreak: {fileID: 4289966106540367553, guid: 9112e84fe08e1514db7fc40dd9c721d7, type: 3}
+  birdDead: {fileID: 2167530177469011868, guid: 85e4e5c3b0716c54cae639afe1a212b7, type: 3}
   AudioBirdDead: {fileID: 3474709894560386092, guid: 72d1d4d601d33134db477b02c3d7eb73, type: 3}
   AudioRock: {fileID: 3474709894560386092, guid: b73f803c9dec89142b61ced9df5a4e78, type: 3}
   AudioShield: {fileID: 3474709894560386092, guid: 9d78db45b80f9ff479c787135a689029, type: 3}
@@ -3124,8 +3125,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.1751, y: -0.033299983, z: 0}
-    m_Extent: {x: 0.96430004, y: 0.6872, z: 0}
+    m_Center: {x: 0.16550002, y: -0.034650028, z: 0}
+    m_Extent: {x: 0.9575, y: 0.68175, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

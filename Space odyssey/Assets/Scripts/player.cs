@@ -52,6 +52,7 @@ public class player : MonoBehaviour
     public Transform BackFlame3;
     public GameObject asteroidBreak;
     public GameObject rockBreak;
+    public GameObject birdDead;
 
     [Space(5)]
     [Header("Audios")]
@@ -284,6 +285,9 @@ public class player : MonoBehaviour
 
         if (collision.gameObject.tag == "bird")
         {
+            Vector3 pos = collision.gameObject.transform.position - new Vector3(0,0.5f,0);
+            Quaternion rotation = birdDead.transform.rotation;
+            Instantiate(birdDead, pos, rotation);
             Destroy(collision.gameObject);
             AudioBirdDead.GetComponent<AudioSource>().pitch = Random.Range(0.5f, 1.5f);
             Instantiate(AudioBirdDead, transform);
