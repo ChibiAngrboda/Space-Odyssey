@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &46774200
 RectTransform:
   m_ObjectHideFlags: 0
@@ -430,6 +430,7 @@ MonoBehaviour:
   lastScoreText: {fileID: 1253382105}
   Play: {fileID: 1114848663}
   playSfx: {fileID: 257199157}
+  next: {fileID: 0}
 --- !u!82 &257199157
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1127,8 +1128,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.015700012, y: 0.019699998, z: 0}
-    m_Extent: {x: 0.2737, y: 0.2597, z: 0}
+    m_Center: {x: -0.009500012, y: 0.021200001, z: 0}
+    m_Extent: {x: 0.28350002, y: 0.2579, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -1609,8 +1610,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.003000006, y: 0.01625, z: 0}
-    m_Extent: {x: 0.1945, y: 0.16595, z: 0}
+    m_Center: {x: 0.0034999996, y: 0.010500006, z: 0}
+    m_Extent: {x: 0.1911, y: 0.1677, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
