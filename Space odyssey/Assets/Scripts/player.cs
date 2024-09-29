@@ -206,7 +206,7 @@ public class player : MonoBehaviour
             Destroy(collision.gameObject);
             fioleNB += 1;
             bonusCD += 2;
-            speed += 0.02f;
+            speed += 0.04f;
         }
         if (collision.gameObject.tag == "Alien")
         {
@@ -237,7 +237,7 @@ public class player : MonoBehaviour
             AudioRock.GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.8f);
             Instantiate(AudioRock, transform);
            
-            if (IsShieldActive == false)
+            if (IsShieldActive == false && speed * slow >= 0.1f)
             {
                 speed = speed * slow;
             }
@@ -257,7 +257,7 @@ public class player : MonoBehaviour
             AudioBirdDead.GetComponent<AudioSource>().pitch = Random.Range(0.5f, 1.5f);
             Instantiate(AudioBirdDead, transform);
 
-            if (IsShieldActive == false)
+            if (IsShieldActive == false && speed * slow >= 0.1f)
             {
                 speed = speed * slow;
             }
