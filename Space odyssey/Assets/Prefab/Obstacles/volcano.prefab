@@ -132,6 +132,7 @@ MonoBehaviour:
   baseCD: 100
   player: {fileID: 0}
   playerDistance: 0
+  spit: {fileID: 8600337492424592610, guid: 9c043fe9b4ff8ec4293a732c5a44a1c7, type: 3}
 --- !u!82 &4465257579894033286
 AudioSource:
   m_ObjectHideFlags: 0

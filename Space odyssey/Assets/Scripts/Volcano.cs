@@ -9,6 +9,7 @@ public class Volcano : MonoBehaviour
     public float baseCD;
     public GameObject player;
     public float playerDistance;
+    public GameObject spit;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,8 +26,18 @@ public class Volcano : MonoBehaviour
         {
             gameObject.GetComponent<AudioSource>().pitch = Random.Range(0.7f, 1.5f);
             gameObject.GetComponent<AudioSource>().Play();
-            Instantiate(rock,new Vector3(gameObject.transform.position.x,gameObject.transform.position.y + 2.5f, 0), new Quaternion(0,0,0,0));
+            GameObject spitToDestroy = Instantiate(spit, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 2.5f, 0), new Quaternion(0, 0, 0, 0));
+            //spitInstantiate(spitToDestroy);
+
+           Instantiate(rock,new Vector3(gameObject.transform.position.x,gameObject.transform.position.y + 2.5f, 0), new Quaternion(0,0,0,0));
             cooldown += baseCD;
         }
+        /*
+        IEnumerator spitInstantiate(GameObject cible)
+        {
+            
+            yield return new WaitForSeconds(0.5f);
+            Destroy(cible);
+        }*/
     }
 }
