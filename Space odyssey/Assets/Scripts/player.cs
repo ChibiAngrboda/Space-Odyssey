@@ -51,6 +51,7 @@ public class player : MonoBehaviour
     public Transform BackFlame2;
     public Transform BackFlame3;
     public GameObject asteroidBreak;
+    public GameObject rockBreak;
 
     [Space(5)]
     [Header("Audios")]
@@ -234,6 +235,10 @@ public class player : MonoBehaviour
         
             if (collision.gameObject.tag == "rock")
         {
+            Quaternion rotation = collision.gameObject.transform.rotation;
+            Vector3 pos = collision.gameObject.transform.position;
+
+            Instantiate(rockBreak, pos, rotation);
             Destroy(collision.gameObject);
             AudioRock.GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.8f);
             Instantiate(AudioRock, transform);

@@ -20,11 +20,14 @@ public class destroy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Déplacer l'astéroïde
-        transform.position += (Vector3)(movementDirection * speed * Time.deltaTime);
+        if (gameObject.tag == "asteroid")
+        {
+            transform.position += (Vector3)(movementDirection * speed * Time.deltaTime);
+            transform.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime);
+        }
+             
 
-        // Faire tourner l'astéroïde
-        transform.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime);
+
         if (gameObject.transform.position.x < player.transform.position.x - 10) 
         { 
             Destroy(gameObject); 
