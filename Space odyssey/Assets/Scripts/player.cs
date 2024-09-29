@@ -6,6 +6,7 @@ using JetBrains.Annotations;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.Rendering.UI;
 
 public class player : MonoBehaviour
 {
@@ -70,6 +71,12 @@ public class player : MonoBehaviour
     public float maxIntensity;
     public float fluctuationSpeed;
     private float time;
+
+    [Space(5)]
+    [Header("PlayerPrefs")]
+    public int birdKilled;
+    public int rockDestroyed;
+    public int maxSpeed;
     //public float offset;
     // Start is called before the first frame update
     void Start()
@@ -84,12 +91,14 @@ public class player : MonoBehaviour
         m_rigidbody = GetComponent <Rigidbody2D>();
         Alien = GameObject.Find("Alien");
         SliderShield.value = bonusCD;
+        maxSpeed = 0;
         
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (speed > maxSpeed) { maxSpeed = Mathf.RoundToInt(speed); }
         time += Time.deltaTime * fluctuationSpeed;
         float intensity = Mathf.Lerp(minIntensity, maxIntensity, (Mathf.Sin(time) + 1) / 2);
         lightFire.intensity = intensity;
@@ -238,7 +247,7 @@ public class player : MonoBehaviour
         {
             Quaternion rotation = collision.gameObject.transform.rotation;
             Vector3 pos = collision.gameObject.transform.position;
-
+            rockDestroyed += 1;
             Instantiate(rockBreak, pos, rotation);
             Destroy(collision.gameObject);
             AudioRock.GetComponent<AudioSource>().pitch = Random.Range(0.7f, 1.9f);
@@ -263,7 +272,7 @@ public class player : MonoBehaviour
             Vector3 pos = collision.gameObject.transform.position;
             
             Instantiate(asteroidBreak, pos, rotation);
-
+            rockDestroyed += 1;
             
             AudioRock.GetComponent<AudioSource>().pitch = Random.Range(0.7f, 1.9f);
             Instantiate(AudioRock, transform);
@@ -291,6 +300,7 @@ public class player : MonoBehaviour
             Destroy(collision.gameObject);
             AudioBirdDead.GetComponent<AudioSource>().pitch = Random.Range(0.7f, 1.9f);
             Instantiate(AudioBirdDead, transform);
+            birdKilled += 1;
 
             if (IsShieldActive == false && speed * slow >= 0.1f)
             {
@@ -342,6 +352,13 @@ public class player : MonoBehaviour
             PlayerPrefs.SetInt("BestScore", playerScore);
             PlayerPrefs.Save();
         }
+
+        int birdKilledPref = PlayerPrefs.GetInt("birdKilled", 0);
+        int rockDestroyedPref = PlayerPrefs.GetInt("rockDestroyed", 0);
+        int maxSpeedPref = PlayerPrefs.GetInt("maxSpeed", 0);
+        PlayerPrefs.SetInt("birdKilled",birdKilledPref + birdKilled);
+        PlayerPrefs.SetInt("rockDestroyed",rockDestroyedPref + rockDestroyed);
+        if (maxSpeedPref < maxSpeed) { PlayerPrefs.SetInt("maxSpeed", maxSpeed); }
     }
 
 
