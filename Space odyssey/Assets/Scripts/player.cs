@@ -241,7 +241,7 @@ public class player : MonoBehaviour
 
             Instantiate(rockBreak, pos, rotation);
             Destroy(collision.gameObject);
-            AudioRock.GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.8f);
+            AudioRock.GetComponent<AudioSource>().pitch = Random.Range(0.7f, 1.9f);
             Instantiate(AudioRock, transform);
            
             if (IsShieldActive == false && speed * slow >= 0.1f)
@@ -265,7 +265,7 @@ public class player : MonoBehaviour
             Instantiate(asteroidBreak, pos, rotation);
 
             
-            AudioRock.GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.8f);
+            AudioRock.GetComponent<AudioSource>().pitch = Random.Range(0.7f, 1.9f);
             Instantiate(AudioRock, transform);
             Destroy(collision.gameObject);
 
@@ -289,7 +289,7 @@ public class player : MonoBehaviour
             Quaternion rotation = birdDead.transform.rotation;
             Instantiate(birdDead, pos, rotation);
             Destroy(collision.gameObject);
-            AudioBirdDead.GetComponent<AudioSource>().pitch = Random.Range(0.5f, 1.5f);
+            AudioBirdDead.GetComponent<AudioSource>().pitch = Random.Range(0.7f, 1.9f);
             Instantiate(AudioBirdDead, transform);
 
             if (IsShieldActive == false && speed * slow >= 0.1f)
